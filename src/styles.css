@@ -170,7 +170,17 @@ legend {
 }
 
 .payments-toggle {
+  background: #eaf2fb;
+  border-color: #cddff2;
   margin-top: 16px;
+}
+
+.payments-toggle strong {
+  color: #143f72;
+}
+
+.payments-toggle small {
+  color: #3e628e;
 }
 
 .date-controls,
