@@ -59,6 +59,8 @@ function App() {
   const [showPayments, setShowPayments] = useState(true);
   const [issueDate, setIssueDate] = useState('2026-05-14');
   const [dueDate, setDueDate] = useState('2026-05-31');
+  const [billToName, setBillToName] = useState(student.guardian);
+  const [billToAddress, setBillToAddress] = useState(student.billingAddress);
 
   const visibleCharges = useMemo(
     () => charges.filter((charge) => selectedCharges[charge.id]),
@@ -146,6 +148,26 @@ function App() {
             </label>
           </fieldset>
 
+          <fieldset className="bill-to-controls">
+            <legend>Bill to</legend>
+            <label className="text-field">
+              <span>Name</span>
+              <input
+                type="text"
+                value={billToName}
+                onChange={(event) => setBillToName(event.target.value)}
+              />
+            </label>
+            <label className="text-field">
+              <span>Address</span>
+              <textarea
+                rows="3"
+                value={billToAddress}
+                onChange={(event) => setBillToAddress(event.target.value)}
+              />
+            </label>
+          </fieldset>
+
           <div className="preview-card" aria-label="Current print preview summary">
             <div className="preview-card-heading">
               <Eye size={18} aria-hidden="true" />
@@ -215,8 +237,8 @@ function App() {
             </div>
             <div>
               <h3>Bill To</h3>
-              <p className="primary-line">{student.guardian}</p>
-              <p>{student.billingAddress}</p>
+              <p className="primary-line">{billToName || 'Billing name'}</p>
+              <p className="preserve-lines">{billToAddress || 'Billing address'}</p>
             </div>
           </section>
 

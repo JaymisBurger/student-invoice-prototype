@@ -18,7 +18,8 @@ body {
 }
 
 button,
-input {
+input,
+textarea {
   font: inherit;
 }
 
@@ -172,27 +173,33 @@ legend {
   margin-top: 16px;
 }
 
-.date-controls {
+.date-controls,
+.bill-to-controls {
   margin-top: 16px;
 }
 
-.date-controls legend {
+.date-controls legend,
+.bill-to-controls legend {
   margin-bottom: 10px;
 }
 
-.date-field {
+.date-field,
+.text-field {
   display: grid;
   gap: 6px;
   margin-top: 10px;
 }
 
-.date-field span {
+.date-field span,
+.text-field span {
   color: #3d4b5f;
   font-size: 0.86rem;
   font-weight: 750;
 }
 
-.date-field input {
+.date-field input,
+.text-field input,
+.text-field textarea {
   background: #fff;
   border: 1px solid #cbd6e2;
   border-radius: 8px;
@@ -202,7 +209,16 @@ legend {
   width: 100%;
 }
 
-.date-field input:focus {
+.text-field textarea {
+  line-height: 1.4;
+  min-height: 82px;
+  padding: 10px 11px;
+  resize: vertical;
+}
+
+.date-field input:focus,
+.text-field input:focus,
+.text-field textarea:focus {
   border-color: #175cd3;
   box-shadow: 0 0 0 3px rgba(23, 92, 211, 0.15);
   outline: none;
@@ -367,6 +383,10 @@ legend {
   color: #202b37 !important;
   font-weight: 780;
   margin-top: 9px;
+}
+
+.preserve-lines {
+  white-space: pre-line;
 }
 
 .invoice-section {
