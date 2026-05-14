@@ -1,0 +1,580 @@
+:root {
+  color: #17202a;
+  background: #eef2f6;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.screen-toolbar {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  margin: 0 auto 18px;
+  max-width: 1180px;
+}
+
+.eyebrow {
+  color: #5a6878;
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0;
+  margin: 0 0 4px;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(1.55rem, 2.8vw, 2.35rem);
+  line-height: 1.1;
+  margin-bottom: 0;
+}
+
+.print-button {
+  align-items: center;
+  background: #175cd3;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: 750;
+  gap: 8px;
+  min-height: 42px;
+  padding: 0 16px;
+}
+
+.print-button:hover {
+  background: #0f4db8;
+}
+
+.workspace {
+  align-items: start;
+  display: grid;
+  gap: 22px;
+  grid-template-columns: minmax(250px, 320px) minmax(0, 820px);
+  justify-content: center;
+}
+
+.control-panel,
+.invoice-page {
+  background: #fff;
+  border: 1px solid #d9e0e8;
+  box-shadow: 0 18px 55px rgba(40, 55, 75, 0.11);
+}
+
+.control-panel {
+  border-radius: 8px;
+  padding: 18px;
+  position: sticky;
+  top: 20px;
+}
+
+.panel-heading,
+.section-title {
+  align-items: center;
+  display: flex;
+  gap: 9px;
+}
+
+.panel-heading {
+  border-bottom: 1px solid #e6ebf0;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+}
+
+.panel-heading h2 {
+  font-size: 1.02rem;
+  margin: 0;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  color: #3d4b5f;
+  font-size: 0.9rem;
+  font-weight: 750;
+  margin-bottom: 10px;
+}
+
+.check-list {
+  display: grid;
+  gap: 8px;
+}
+
+.check-row {
+  align-items: flex-start;
+  background: #f7f9fc;
+  border: 1px solid #e3e9f0;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  padding: 11px;
+}
+
+.check-row input {
+  accent-color: #175cd3;
+  flex: 0 0 auto;
+  height: 18px;
+  margin-top: 2px;
+  width: 18px;
+}
+
+.check-row span {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.check-row strong {
+  color: #1d2733;
+  font-size: 0.92rem;
+}
+
+.check-row small {
+  color: #667789;
+}
+
+.payments-toggle {
+  margin-top: 16px;
+}
+
+.date-controls {
+  margin-top: 16px;
+}
+
+.date-controls legend {
+  margin-bottom: 10px;
+}
+
+.date-field {
+  display: grid;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.date-field span {
+  color: #3d4b5f;
+  font-size: 0.86rem;
+  font-weight: 750;
+}
+
+.date-field input {
+  background: #fff;
+  border: 1px solid #cbd6e2;
+  border-radius: 8px;
+  color: #202b37;
+  min-height: 42px;
+  padding: 0 11px;
+  width: 100%;
+}
+
+.date-field input:focus {
+  border-color: #175cd3;
+  box-shadow: 0 0 0 3px rgba(23, 92, 211, 0.15);
+  outline: none;
+}
+
+.preview-card {
+  background: #fff;
+  border: 1px solid #d7e0ea;
+  border-radius: 8px;
+  margin-top: 16px;
+  padding: 14px;
+}
+
+.preview-card-heading {
+  align-items: center;
+  color: #243a55;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.preview-card dl {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+}
+
+.preview-card dl div {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.preview-card dt {
+  color: #667789;
+}
+
+.preview-card dd {
+  color: #202b37;
+  font-weight: 800;
+  margin: 0;
+}
+
+.preview-stage {
+  background:
+    linear-gradient(90deg, rgba(111, 126, 144, 0.1) 1px, transparent 1px),
+    linear-gradient(rgba(111, 126, 144, 0.1) 1px, transparent 1px),
+    #dfe5ec;
+  background-size: 18px 18px;
+  border: 1px solid #cbd5df;
+  border-radius: 8px;
+  padding: 18px;
+}
+
+.preview-ruler {
+  align-items: center;
+  color: #536274;
+  display: flex;
+  font-size: 0.82rem;
+  font-weight: 750;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.invoice-page {
+  border-radius: 3px;
+  color: #202b37;
+  min-height: 960px;
+  padding: clamp(22px, 4.5vw, 48px);
+}
+
+.invoice-header {
+  align-items: flex-start;
+  border-bottom: 2px solid #1f344d;
+  display: flex;
+  gap: 28px;
+  justify-content: space-between;
+  padding-bottom: 28px;
+}
+
+.brand-block {
+  display: flex;
+  gap: 14px;
+  min-width: 0;
+}
+
+.brand-mark {
+  align-items: center;
+  background: #dce9f8;
+  border: 1px solid #bfd3ec;
+  border-radius: 8px;
+  color: #16437e;
+  display: flex;
+  flex: 0 0 auto;
+  height: 52px;
+  justify-content: center;
+  width: 52px;
+}
+
+.brand-block h2 {
+  font-size: clamp(1.2rem, 2.3vw, 1.8rem);
+  line-height: 1.15;
+  margin-bottom: 10px;
+}
+
+.brand-block p,
+.invoice-meta span,
+.info-grid p,
+.invoice-footer p {
+  color: #4f5f70;
+  line-height: 1.45;
+  margin-bottom: 2px;
+}
+
+.invoice-meta {
+  min-width: 176px;
+  text-align: right;
+}
+
+.invoice-meta p {
+  color: #5d6a7a;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.invoice-meta strong {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 7px;
+}
+
+.invoice-meta span {
+  display: block;
+}
+
+.info-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 28px 0;
+}
+
+.info-grid > div {
+  background: #f7f9fb;
+  border: 1px solid #e0e7ee;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.info-grid h3,
+.invoice-section h3 {
+  font-size: 0.92rem;
+  letter-spacing: 0;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.primary-line {
+  color: #202b37 !important;
+  font-weight: 780;
+  margin-top: 9px;
+}
+
+.invoice-section {
+  margin-top: 26px;
+}
+
+.section-heading {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.section-heading span {
+  color: #657486;
+  font-size: 0.86rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  min-width: 520px;
+  width: 100%;
+}
+
+th {
+  background: #243a55;
+  color: #fff;
+  font-size: 0.78rem;
+  letter-spacing: 0;
+  padding: 11px 12px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+td {
+  border-bottom: 1px solid #e6ebf0;
+  color: #334255;
+  padding: 13px 12px;
+}
+
+.amount {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.empty-row {
+  color: #687789;
+  font-style: italic;
+  text-align: center;
+}
+
+.payments-section th {
+  background: #31564f;
+}
+
+.totals {
+  border-top: 2px solid #202b37;
+  display: grid;
+  gap: 9px;
+  margin-left: auto;
+  margin-top: 34px;
+  max-width: 330px;
+  padding-top: 15px;
+}
+
+.totals div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.totals span {
+  color: #5c6877;
+}
+
+.totals strong {
+  color: #202b37;
+}
+
+.totals .balance {
+  align-items: center;
+  background: #eaf2fb;
+  border: 1px solid #cddff2;
+  border-radius: 8px;
+  margin-top: 5px;
+  padding: 13px;
+}
+
+.totals .balance span,
+.totals .balance strong {
+  color: #143f72;
+  font-size: 1.05rem;
+  font-weight: 850;
+}
+
+.invoice-footer {
+  border-top: 1px solid #e2e8ef;
+  margin-top: 42px;
+  padding-top: 18px;
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    padding: 16px;
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .control-panel {
+    position: static;
+  }
+
+  .preview-stage {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .screen-toolbar,
+  .invoice-header,
+  .brand-block {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .print-button {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .invoice-page {
+    min-height: 0;
+  }
+
+  .invoice-meta {
+    min-width: 0;
+    text-align: left;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .totals {
+    max-width: none;
+  }
+}
+
+@media print {
+  @page {
+    margin: 0.55in;
+  }
+
+  :root,
+  body {
+    background: #fff;
+  }
+
+  .no-print,
+  .screen-toolbar,
+  .control-panel,
+  button,
+  input,
+  label {
+    display: none !important;
+  }
+
+  .app-shell {
+    min-height: auto;
+    padding: 0;
+  }
+
+  .workspace {
+    display: block;
+  }
+
+  .preview-stage {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .invoice-page {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    min-height: auto;
+    padding: 0;
+    width: 100%;
+  }
+
+  .table-wrap {
+    overflow: visible;
+  }
+
+  table {
+    min-width: 0;
+  }
+
+  tr,
+  .info-grid > div,
+  .totals {
+    break-inside: avoid;
+  }
+}
