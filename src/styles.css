@@ -170,17 +170,17 @@ legend {
 }
 
 .payments-toggle {
-  background: #eaf2fb;
-  border-color: #cddff2;
+  background: #fff;
+  border-color: #d7e0ea;
   margin-top: 16px;
 }
 
 .payments-toggle strong {
-  color: #143f72;
+  color: #1d2733;
 }
 
 .payments-toggle small {
-  color: #3e628e;
+  color: #667789;
 }
 
 .date-controls,
@@ -552,12 +552,14 @@ td {
 
 @media print {
   @page {
-    margin: 0.55in;
+    margin: 0.35in;
+    size: letter portrait;
   }
 
   :root,
   body {
     background: #fff;
+    font-size: 11px;
   }
 
   .no-print,
@@ -591,7 +593,89 @@ td {
     box-shadow: none;
     min-height: auto;
     padding: 0;
-    width: 100%;
+    transform: scale(0.92);
+    transform-origin: top left;
+    width: 108.5%;
+  }
+
+  .invoice-header {
+    gap: 18px;
+    padding-bottom: 16px;
+  }
+
+  .brand-mark {
+    height: 40px;
+    width: 40px;
+  }
+
+  .brand-block h2 {
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+  }
+
+  .brand-block p,
+  .invoice-meta span,
+  .info-grid p,
+  .invoice-footer p {
+    line-height: 1.25;
+  }
+
+  .invoice-meta strong {
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+
+  .info-grid {
+    gap: 12px;
+    margin: 16px 0;
+  }
+
+  .info-grid > div {
+    padding: 10px;
+  }
+
+  .primary-line {
+    margin-top: 5px;
+  }
+
+  .invoice-section {
+    margin-top: 14px;
+  }
+
+  .section-heading {
+    margin-bottom: 6px;
+  }
+
+  th {
+    padding: 7px 9px;
+  }
+
+  td {
+    padding: 7px 9px;
+  }
+
+  .totals {
+    gap: 5px;
+    margin-top: 18px;
+    max-width: 285px;
+    padding-top: 10px;
+  }
+
+  .totals .balance {
+    padding: 9px;
+  }
+
+  .invoice-footer {
+    margin-top: 18px;
+    padding-top: 10px;
+  }
+
+  .invoice-page,
+  .invoice-header,
+  .invoice-section,
+  .payments-section,
+  .invoice-footer {
+    break-inside: avoid;
   }
 
   .table-wrap {
